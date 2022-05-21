@@ -28,13 +28,13 @@ public class AuthorInsert {
 			//SQL문 준비
 			String query = "";
 			query += " insert into author ";
-			query += " values(seq_author_id.nextval, ?, ?) ";
+			query += " values(seq_author_id.nextval , ?, ?) ";
 			System.out.println(query);
 			
 			//바인딩
-			pstmt = conn.prepareStatement(query);  //문자열 쿼리로 만들기
-			pstmt.setString(1, "김영하");          //?(물음표) 중 1번째 -->순서중요
-			pstmt.setString(2, "알쓸신잡");       //?(물음표) 중 2번째 -->순서중요
+			pstmt = conn.prepareStatement(query);//문자열 쿼리로 만들기
+			pstmt.setString(2, "강풀");          //?(물음표) 중 1번째 -->순서중요
+			pstmt.setString(3, "온라인 만화가 1세대");       //?(물음표) 중 2번째 -->순서중요
 			
 			//실행
 			int count = pstmt.executeUpdate();                 //쿼리문실행 -->성공갯수 리턴      
